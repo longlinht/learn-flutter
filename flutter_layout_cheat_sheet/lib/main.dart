@@ -7,6 +7,9 @@ import 'package:flutter_layout_cheat_sheet/ui/expanded.dart';
 import 'package:flutter_layout_cheat_sheet/ui/instrinsic.dart';
 import 'package:flutter_layout_cheat_sheet/ui/material.dart';
 import 'package:flutter_layout_cheat_sheet/ui/row_column.dart';
+import 'package:flutter_layout_cheat_sheet/ui/safearea.dart';
+import 'package:flutter_layout_cheat_sheet/ui/sizedbox.dart';
+import 'package:flutter_layout_cheat_sheet/ui/sliver.dart';
 import 'package:flutter_layout_cheat_sheet/ui/stack.dart';
 
 void main() {
@@ -123,6 +126,36 @@ class MyHomePage extends StatelessWidget {
                     .of(context)
                     .push(MaterialPageRoute(builder: (BuildContext context) {
                   return MaterialDemo();
+                }));
+              },
+            ),
+            RaisedButton(
+              child: Text('Sliver'),
+              onPressed: () {
+                Navigator
+                    .of(context)
+                    .push(MaterialPageRoute(builder: (BuildContext context) {
+                  return SliverPage();
+                }));
+              },
+            ),
+            RaisedButton(
+              child: Text('SizedBox'),
+              onPressed: () {
+                Navigator
+                    .of(context)
+                    .push(MaterialPageRoute(builder: (BuildContext context) {
+                  return SizedBoxPage();
+                }));
+              },
+            ),
+            RaisedButton(
+              child: Text('SafeArea'),
+              onPressed: () {
+                Navigator
+                    .of(context)
+                    .push(MaterialPageRoute(builder: (BuildContext context) {
+                  return SafeAreaPage();
                 }));
               },
             )
