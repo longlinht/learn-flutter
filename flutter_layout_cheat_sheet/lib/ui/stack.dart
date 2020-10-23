@@ -32,6 +32,7 @@ class StackPage extends StatelessWidget {
       ],
     );
      */
+    /*
     return Scaffold(
       appBar: AppBar(title: Text('Stack'),),
       body: Stack(
@@ -49,6 +50,30 @@ class StackPage extends StatelessWidget {
             child: Icon(Icons.call, size: 50),
           )
         ],
+      ),
+    );
+     */
+    const iconSize = 50;
+
+    return Scaffold(
+      appBar: AppBar(title: Text('Stack with LayoutBuilder'),),
+      body: LayoutBuilder(
+        builder: (context, constraints) =>
+            Stack(
+              fit: StackFit.expand,
+              children: [
+                Material(color: Colors.yellowAccent,),
+                Positioned(
+                  top: 0,
+                  child: Icon(Icons.star, size: 50),
+                ),
+                Positioned(
+                  top: constraints.maxHeight - iconSize,
+                  left: constraints.maxWidth - iconSize,
+                  child: Icon(Icons.call, size: 50),
+                )
+              ],
+            ),
       ),
     );
 

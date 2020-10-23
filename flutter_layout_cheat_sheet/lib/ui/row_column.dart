@@ -6,26 +6,29 @@ class RowColumnPage extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(title: Text('Row Column')),
       // Row/Column MainAxisAlignment
-      body: Row /*Column*/(
-        // mainAxisAlignment: MainAxisAlignment.start,
-        // mainAxisAlignment: MainAxisAlignment.center,
-        // mainAxisAlignment: MainAxisAlignment.end,
-        // mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-        // mainAxisAlignment: MainAxisAlignment.spaceBetween,
-        // mainAxisAlignment: MainAxisAlignment.spaceAround,
+      body:
+          Container(
+            color: Colors.yellow,
+            child: Row /*Column*/(
+              // mainAxisAlignment: MainAxisAlignment.start,
+              // mainAxisAlignment: MainAxisAlignment.center,
+              // mainAxisAlignment: MainAxisAlignment.end,
+              // mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              // mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              // mainAxisAlignment: MainAxisAlignment.spaceAround,
 
-        //crossAxisAlignment: CrossAxisAlignment.start,
-        //crossAxisAlignment: CrossAxisAlignment.end,
-        //crossAxisAlignment: CrossAxisAlignment.center,
-        //crossAxisAlignment: CrossAxisAlignment.stretch,
-        mainAxisSize: MainAxisSize.max,
-          children: <Widget>[
-            Icon(Icons.favorite, size: 50),
-            Icon(Icons.favorite, size: 50),
-            Icon(Icons.favorite, size: 50),
-          ]
-      ),
-
+              //crossAxisAlignment: CrossAxisAlignment.start,
+              //crossAxisAlignment: CrossAxisAlignment.end,
+              //crossAxisAlignment: CrossAxisAlignment.center,
+              //crossAxisAlignment: CrossAxisAlignment.stretch,
+                mainAxisSize: MainAxisSize.min,
+                children: <Widget>[
+                  Icon(Icons.favorite, size: 50),
+                  Icon(Icons.favorite, size: 50),
+                  Icon(Icons.favorite, size: 50),
+                ]
+            ),
+          )
       // Row/Column MainAxisAlignment
       /*
       body: Row /*Column*/(

@@ -1,5 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_layout_cheat_sheet/ui/align.dart';
+import 'package:flutter_layout_cheat_sheet/ui/boxdecoration.dart';
+import 'package:flutter_layout_cheat_sheet/ui/constrainedbox.dart';
+import 'package:flutter_layout_cheat_sheet/ui/container.dart';
+import 'package:flutter_layout_cheat_sheet/ui/expanded.dart';
 import 'package:flutter_layout_cheat_sheet/ui/instrinsic.dart';
+import 'package:flutter_layout_cheat_sheet/ui/material.dart';
 import 'package:flutter_layout_cheat_sheet/ui/row_column.dart';
 import 'package:flutter_layout_cheat_sheet/ui/stack.dart';
 
@@ -60,6 +66,66 @@ class MyHomePage extends StatelessWidget {
                 }));
               },
             ),
+            RaisedButton(
+              child: Text('Expanded'),
+              onPressed: () {
+                Navigator
+                    .of(context)
+                    .push(MaterialPageRoute(builder: (BuildContext context) {
+                  return ExpandedPage();
+                }));
+              },
+            ),
+            RaisedButton(
+              child: Text('ConstrainedBox'),
+              onPressed: () {
+                Navigator
+                    .of(context)
+                    .push(MaterialPageRoute(builder: (BuildContext context) {
+                  return ConstrainedBoxPage();
+                }));
+              },
+            ),
+            RaisedButton(
+              child: Text('Align'),
+              onPressed: () {
+                Navigator
+                    .of(context)
+                    .push(MaterialPageRoute(builder: (BuildContext context) {
+                  return ContainerPage();
+                }));
+              },
+            ),
+            RaisedButton(
+              child: Text('Container'),
+              onPressed: () {
+                Navigator
+                    .of(context)
+                    .push(MaterialPageRoute(builder: (BuildContext context) {
+                  return ContainerPage();
+                }));
+              },
+            ),
+            RaisedButton(
+              child: Text('BoxDecoration'),
+              onPressed: () {
+                Navigator
+                    .of(context)
+                    .push(MaterialPageRoute(builder: (BuildContext context) {
+                  return BoxDecorationPage();
+                }));
+              },
+            ),
+            RaisedButton(
+              child: Text('Material'),
+              onPressed: () {
+                Navigator
+                    .of(context)
+                    .push(MaterialPageRoute(builder: (BuildContext context) {
+                  return MaterialDemo();
+                }));
+              },
+            )
           ],
         ),
       ),
