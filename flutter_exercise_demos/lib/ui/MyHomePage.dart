@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_exercise_demos/model/ListTileModel.dart';
+import 'package:flutter_exercise_demos/ui/DropDownButtonPage.dart';
 
 class MyHomePage extends StatefulWidget {
   MyHomePage({Key key, this.title}) : super(key: key);
@@ -7,10 +8,10 @@ class MyHomePage extends StatefulWidget {
   final String title;
 
   @override
-  _MyHomePageState createState() => _MyHomePageState();
+  MyHomePageState createState() => MyHomePageState();
 }
 
-class _MyHomePageState extends State<MyHomePage> {
+class MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -18,22 +19,36 @@ class _MyHomePageState extends State<MyHomePage> {
         title: Text(widget.title),
         backgroundColor: Colors.redAccent,
       ),
-      body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[
-            new RaisedButton(
-              child: Text(
-                "Bottom Sheet",
-                style: TextStyle(fontSize: 20),
-              ),
-              onPressed: () {
-                _openBottomSheet(context);
-              },
-            )
-          ],
-        ),
-      ),
+      body:
+          Center(
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              children: <Widget>[
+                RaisedButton(
+                  child: Text(
+                    "Bottom Sheet",
+                    style: TextStyle(fontSize: 20),
+                  ),
+                  onPressed: () {
+                    _openBottomSheet(context);
+                  },
+                ),
+                RaisedButton(
+                  child: Text(
+                    "DropDown Button",
+                    style: TextStyle(fontSize: 20),
+                  ),
+                  onPressed: () {
+                    Navigator
+                        .of(context)
+                        .push(MaterialPageRoute(builder: (BuildContext context) {
+                      return DropDownButtonPage();
+                    }));
+                  },
+                )
+              ],
+            ),
+          )
     );
   }
 }
