@@ -30,7 +30,7 @@ class MyHomePageState extends State<MyHomePage> {
                     style: TextStyle(fontSize: 20),
                   ),
                   onPressed: () {
-                    _openBottomSheet(context);
+                    openBottomSheet(context);
                   },
                 ),
                 RaisedButton(
@@ -53,7 +53,7 @@ class MyHomePageState extends State<MyHomePage> {
   }
 }
 
-void _openBottomSheet(context) {
+void openBottomSheet(context) {
   showModalBottomSheet(
     backgroundColor: Colors.white,
     context: context,
