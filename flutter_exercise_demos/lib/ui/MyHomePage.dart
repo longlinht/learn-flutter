@@ -41,9 +41,7 @@ class MyHomePageState extends State<MyHomePage> {
                   onPressed: () {
                     Navigator
                         .of(context)
-                        .push(MaterialPageRoute(builder: (BuildContext context) {
-                      return DropDownButtonPage();
-                    }));
+                        .push(_createRoute());
                   },
                 )
               ],
@@ -51,6 +49,29 @@ class MyHomePageState extends State<MyHomePage> {
           )
     );
   }
+}
+
+Route _createRoute() {
+  return PageRouteBuilder(
+    pageBuilder: (context, animation, secondaryAnimation) => DropDownButtonPage(),
+    transitionsBuilder: (context, animation, secondaryAnimation, child) {
+
+      var begin = Offset(1.0, 0.0);
+      var end = Offset.zero;
+      var curve = Curves.ease;
+
+      var tween = Tween(begin: begin, end: end);
+      var curvedAnimation = CurvedAnimation(
+        parent: animation,
+        curve: curve,
+      );
+
+      return SlideTransition(
+        position: tween.animate(curvedAnimation),
+        child: child,
+      );
+    },
+  );
 }
 
 void openBottomSheet(context) {
