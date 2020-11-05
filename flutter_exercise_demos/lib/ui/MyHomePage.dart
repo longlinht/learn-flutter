@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_exercise_demos/model/ListTileModel.dart';
 import 'package:flutter_exercise_demos/ui/DrawerPage.dart';
 import 'package:flutter_exercise_demos/ui/DropDownButtonPage.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 class MyHomePage extends StatefulWidget {
   MyHomePage({Key key, this.title}) : super(key: key);
@@ -13,6 +14,17 @@ class MyHomePage extends StatefulWidget {
 }
 
 class MyHomePageState extends State<MyHomePage> {
+
+  var counter = 0;
+  static const KEY = "counter";
+
+
+  @override
+  void initState() {
+    super.initState();
+    loadSaveData();
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -56,13 +68,40 @@ class MyHomePageState extends State<MyHomePage> {
                           return DrawerPage();
                     }));
                   },
+                ),
+                RaisedButton(
+                  child: Text(
+                    "Persist Button, count= $counter",
+                    style: TextStyle(fontSize: 20),
+                  ),
+                  onPressed: () {
+                    onIncrementHint();
+                  },
                 )
               ],
             ),
           )
     );
   }
+
+  loadSaveData() async {
+    SharedPreferences prefs = await SharedPreferences.getInstance();
+    setState(() {
+      counter = ((prefs.getInt(KEY)) ?? 0);
+    });
+  }
+
+  onIncrementHint() async {
+    SharedPreferences prefs = await SharedPreferences.getInstance();
+    setState(() {
+      counter = ((prefs.getInt(KEY)) ?? 0) + 1;
+    });
+
+    prefs.setInt(KEY, counter);
+  }
 }
+
+
 
 Route _createRoute() {
   return PageRouteBuilder(
