@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_exercise_demos/model/ListTileModel.dart';
+import 'package:flutter_exercise_demos/ui/DrawerPage.dart';
 import 'package:flutter_exercise_demos/ui/DropDownButtonPage.dart';
 
 class MyHomePage extends StatefulWidget {
@@ -42,6 +43,18 @@ class MyHomePageState extends State<MyHomePage> {
                     Navigator
                         .of(context)
                         .push(_createRoute());
+                  },
+                ),
+                RaisedButton(
+                  child: Text(
+                    "Drawer Button",
+                    style: TextStyle(fontSize: 20),
+                  ),
+                  onPressed: () {
+                    Navigator
+                        .of(context).push(MaterialPageRoute(builder: (BuildContext context){
+                          return DrawerPage();
+                    }));
                   },
                 )
               ],
