@@ -77,7 +77,16 @@ class MyHomePageState extends State<MyHomePage> {
                   onPressed: () {
                     onIncrementHint();
                   },
-                )
+                ),
+                RaisedButton(
+                  child: Text(
+                    "Alert Dialog",
+                    style: TextStyle(fontSize: 20),
+                  ),
+                  onPressed: () {
+                    openAlertDialog(context);
+                  },
+                ),
               ],
             ),
           )
@@ -151,4 +160,16 @@ void openBottomSheet(context) {
       );
     },
   );
+
+
+}
+
+void openAlertDialog(context) {
+  AlertDialog dialog = AlertDialog(
+      content: Text(
+        "Hello World!",
+        style: TextStyle(fontSize: 30.0),
+      ));
+
+  showDialog(context: context, builder: (BuildContext context) => dialog);
 }
